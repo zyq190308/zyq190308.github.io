@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>getBoundingClientRect | ZYQ的博客</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="专注于记录技术点滴">
+    
+    <link rel="preload" href="/assets/css/0.styles.6c418e4a.css" as="style"><link rel="preload" href="/assets/js/app.e5c1183a.js" as="script"><link rel="preload" href="/assets/js/2.cdc9b7a5.js" as="script"><link rel="preload" href="/assets/js/12.8c72f4a9.js" as="script"><link rel="prefetch" href="/assets/js/10.e9cf8702.js"><link rel="prefetch" href="/assets/js/11.493577ba.js"><link rel="prefetch" href="/assets/js/13.60a0aae2.js"><link rel="prefetch" href="/assets/js/14.5a73a522.js"><link rel="prefetch" href="/assets/js/15.79caeada.js"><link rel="prefetch" href="/assets/js/16.9261bf70.js"><link rel="prefetch" href="/assets/js/17.95cd622c.js"><link rel="prefetch" href="/assets/js/18.d386a1ea.js"><link rel="prefetch" href="/assets/js/19.12ffc7b3.js"><link rel="prefetch" href="/assets/js/20.7698fc4c.js"><link rel="prefetch" href="/assets/js/21.8384d187.js"><link rel="prefetch" href="/assets/js/22.bf569bbe.js"><link rel="prefetch" href="/assets/js/23.e338cbec.js"><link rel="prefetch" href="/assets/js/24.ef54d0fd.js"><link rel="prefetch" href="/assets/js/25.589a0ab7.js"><link rel="prefetch" href="/assets/js/26.3cfe56d8.js"><link rel="prefetch" href="/assets/js/27.8b041c19.js"><link rel="prefetch" href="/assets/js/28.095c6b1c.js"><link rel="prefetch" href="/assets/js/3.737e0b25.js"><link rel="prefetch" href="/assets/js/4.edb37aa4.js"><link rel="prefetch" href="/assets/js/5.b8e247ae.js"><link rel="prefetch" href="/assets/js/6.8edc9bd4.js"><link rel="prefetch" href="/assets/js/7.f69da5d1.js"><link rel="prefetch" href="/assets/js/8.1abb64d1.js"><link rel="prefetch" href="/assets/js/9.1088bc8b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6c418e4a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/avatar.jpeg" alt="ZYQ的博客" class="logo"> <span class="site-name can-hide">ZYQ的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/js/" class="nav-link">
+  JS
+</a></div><div class="nav-item"><a href="/css/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  CSS
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他
+</a></div><div class="nav-item"><a href="https://github.com/zyq190308" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vue/" class="nav-link">
+  Vue
+</a></div><div class="nav-item"><a href="/react/" class="nav-link">
+  React
+</a></div><div class="nav-item"><a href="/js/" class="nav-link">
+  JS
+</a></div><div class="nav-item"><a href="/css/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  CSS
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他
+</a></div><div class="nav-item"><a href="https://github.com/zyq190308" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/css/" aria-current="page" class="active sidebar-link">getBoundingClientRect</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/css/#基本概念" class="sidebar-link">基本概念</a></li><li class="sidebar-sub-header"><a href="/css/#应用场景" class="sidebar-link">应用场景</a></li></ul></li><li><a href="/css/scroll.html" class="sidebar-link">scroll遇见的问题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/css/scroll.html#滚动条问题" class="sidebar-link">滚动条问题</a></li><li class="sidebar-sub-header"><a href="/css/scroll.html#滚动切换位置问题" class="sidebar-link">滚动切换位置问题</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="getboundingclientrect"><a href="#getboundingclientrect" class="header-anchor">#</a> getBoundingClientRect</h1> <p>Element.getBoundingClientRect()方法返回元素的大小及其相对于视口的位置。</p> <h2 id="基本概念"><a href="#基本概念" class="header-anchor">#</a> 基本概念</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code>rectObject <span class="token operator">=</span> object<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>返回值是一个 DOMRect 对象，这个对象是由该元素的 getClientRects() 方法返回的一组矩形的集合, 即：是与该元素相关的CSS 边框集合 。</p> <p>DOMRect 对象包含了一组用于描述边框的只读属性——left、top、right和bottom，单位为像素。除了 width 和 height 外的属性都是相对于视口的左上角位置而言的。</p> <img src="https://mdn.mozillademos.org/files/15087/rect.png" width="200"> <p>空边框盒（译者注：没有内容的边框）会被忽略。如果所有的元素边框都是空边框，那么这个矩形给该元素返回的 width、height 值为0，left、top值为第一个css盒子（按内容顺序）的top-left值。</p> <p>当计算边界矩形时，会考虑视口区域（或其他可滚动元素）内的滚动操作，也就是说，当滚动位置发生了改变，top和left属性值就会随之立即发生变化（因此，它们的值是相对于视口的，而不是绝对的）。如果你需要获得相对于整个网页左上角定位的属性值，那么只要给top、left属性值加上当前的滚动位置（通过window.scrollX和window.scrollY），这样就可以获取与当前的滚动位置无关的值。</p> <p>DOMRect包含的参数：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token punctuation">{</span>
+  bottom<span class="token operator">:</span> <span class="token number">388.6875</span>
+  height<span class="token operator">:</span> <span class="token number">66.6875</span>
+  left<span class="token operator">:</span> <span class="token number">212</span>
+  right<span class="token operator">:</span> <span class="token number">312</span>
+  top<span class="token operator">:</span> <span class="token number">322</span>
+  width<span class="token operator">:</span> <span class="token number">100</span>
+  x<span class="token operator">:</span> <span class="token number">212</span>
+  y<span class="token operator">:</span> <span class="token number">322</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="应用场景"><a href="#应用场景" class="header-anchor">#</a> 应用场景</h2> <p>这是常见的对是否出现在可视区域的一个典型例子，图片通过margin隐藏在可视区域外，然后滚动后通过getBoundingClientRect().top和offsetTop来判断出现的条件。</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+		<span class="token selector">*</span> <span class="token punctuation">{</span>
+			<span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+			<span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token selector">.box</span> <span class="token punctuation">{</span>
+			<span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+			<span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+			<span class="token property">height</span><span class="token punctuation">:</span> 180px<span class="token punctuation">;</span>
+			<span class="token property">background-color</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span>
+			<span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token selector">.inner</span> <span class="token punctuation">{</span>
+			<span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+			<span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+			<span class="token property">background-color</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token selector">img</span> <span class="token punctuation">{</span>
+			<span class="token property">margin-top</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>inner<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+			<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>image<span class="token punctuation">&quot;</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>100<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>		
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+		<span class="token keyword">const</span> box <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.box'</span><span class="token punctuation">)</span>
+		<span class="token keyword">const</span> inner <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.inner'</span><span class="token punctuation">)</span>
+		<span class="token keyword">const</span> img <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span>
+		
+		box<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'scroll'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+			<span class="token keyword">const</span> rect <span class="token operator">=</span> img<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>rect<span class="token punctuation">.</span>top <span class="token operator">&lt;</span> img<span class="token punctuation">.</span>offsetTop<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>img<span class="token punctuation">.</span>loaded<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                img<span class="token punctuation">.</span>loaded <span class="token operator">=</span> <span class="token boolean">true</span>
+                img<span class="token punctuation">.</span>src <span class="token operator">=</span> img<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'data-src'</span><span class="token punctuation">)</span>
+              <span class="token punctuation">}</span>
+              console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'来到可视区了'</span><span class="token punctuation">)</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/css/scroll.html">
+        scroll遇见的问题
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e5c1183a.js" defer></script><script src="/assets/js/2.cdc9b7a5.js" defer></script><script src="/assets/js/12.8c72f4a9.js" defer></script>
+  </body>
+</html>
